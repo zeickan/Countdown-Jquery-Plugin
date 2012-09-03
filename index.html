@@ -15,8 +15,14 @@
 	<script type="text/javascript">
 
 		$(document).ready(function() {
-		  
-			countdown(0,0,0,15);
+		  	
+		  	/*
+			 * countdown(Days,Hours,Minutes,Seconds);
+		  	 */
+			
+		  	var apocalypse = getValuesByTimestamp('1356096640');
+
+		  	countdown(apocalypse[0],apocalypse[1],apocalypse[2],apocalypse[3]);
 
 		});
 
@@ -26,40 +32,24 @@
 <body>
 
 	<div id="timeNext" class="date">
-		
-		<div id="nextDays"></div>
 
-			<div class="separator">:</div>
+		<!-- COUNTDOWN HERE -->
 
-		<div id="nextHours"></div>
-
-			<div class="separator">:</div>
-		
-		<div id="nextMinutes"></div>
-
-			<div class="separator">:</div>
-		
-		<div id="nextSeconds"></div>
-
-		
-		<i></i>
+		<div class="clear"></div>
 		
 		<p class="cols3">Días</p>
-		
 		<div class="separator"></div>
-		
-		<p class="cols2">Horas</p>
-		
-		<div class="separator"></div>
-		
-		<p class="cols2">Minutos</p>
-		
-		<div class="separator"></div>
-		
-		<p class="cols2">Segundos</p>
-		
 
+		<p class="cols2">Horas</p>
+		<div class="separator"></div>
+
+		<p class="cols2">Minutos</p>
+		<div class="separator"></div>
+
+		<p class="cols2">Segundos</p>
 	</div>
+
+	<div id="debug"></div>
 
 </body>
 </html>

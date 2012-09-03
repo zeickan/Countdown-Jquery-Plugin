@@ -5,6 +5,15 @@ var global_Secs = '';
 var global_die  = false;
 
 function countdown(days,hours,minutes,seconds){
+
+    field = new Array();
+
+    field[0] = '<div id="nextDays"></div>';
+    field[1] = '<div id="nextHours"></div>';
+    field[2] = '<div id="nextMinutes"></div>';
+    field[3] = '<div id="nextSeconds"></div>';
+
+    $("#timeNext").prepend( field.join('<div class="separator">:</div>') );
     
     global_Days = days;
     global_Hour = hours;
@@ -20,12 +29,42 @@ function countdown(days,hours,minutes,seconds){
     var Minutes = disjoin( zeroFill( String(minutes) , 2 ) );    
     $("#nextMinutes").html( Minutes.join('') );
     
-    var Seconds = disjoin( zeroFill( String(seconds) ) ,2 );    
+    var Seconds = disjoin( zeroFill( String(seconds) , 2 ) );    
     $("#nextSeconds").html( Seconds.join('') );
     
     
     sTseconds = setInterval('countSeconds()',1000);
     
+}
+
+function getValuesByTimestamp( timestampa ){
+
+    /*
+     * Apocalipsis:  1356096640
+     * Tiempo ahora: 1346704132713
+     */
+
+    foo = timestampa;       
+
+    fecha = new Date().getTime();
+
+    bar = foo - parseInt(fecha / 1000);
+
+    dias = parseInt(bar/86400);
+    bar = bar - (dias*86400);
+
+    horas = parseInt(bar/3600);
+    bar = bar - (horas*3600);
+
+    minutes = parseInt(bar/60);
+    bar = bar - (minutes*60);
+
+    seconds = parseInt(bar);
+
+    var values = new Array( dias, horas, minutes, seconds );
+
+    return values;
+
 }
 
 function disjoin(str){
