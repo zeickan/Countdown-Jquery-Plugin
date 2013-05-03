@@ -1,11 +1,7 @@
 html, body {
 	margin: 0px;
-	background: #F9F9F9 url(images/apocalypse.jpeg);
-
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+	font-family: "Helvetica";
+	font-weight: 100;
 }
 
 .clear {
@@ -13,31 +9,15 @@ html, body {
 }
 
 .date {
-	background: rgba(50,50,50,0.6);
-	border-radius: 10px;
-
-	position: absolute;
-	top: 50%; 
-	left: 50%; 
-
-	
-	margin-top: -65px; /* Restamos la mitad de la altura del objeto con un margin-top */
-	margin-left: -192px; /* Restamos la mitad de la anchura del objeto con un margin-left */
-
 	height: 70px; 
 	width: 324px;
-	padding: 30px;
 }
 
 .date span {	
 	background: url(images/date.png) no-repeat left top;
 	display: block;
-
-	font-family: "RobotoCnRegular", "Times New Roman";
 	font-size: 34px;
-
 	text-align: center;
-
 	float: left;
 	padding-top: 6px;
 	height: 50px;
@@ -46,13 +26,9 @@ html, body {
 }
 
 .date div.separator {
-	display: block;
-
-	font-family: "RobotoCnRegular", "Times New Roman";
+	display: block;	
 	font-size: 34px;
-
 	text-align: center;
-
 	float: left;
 	padding-top: 3px;
 	height: 50px;
@@ -67,7 +43,6 @@ html, body {
 
 
 .date .cols2 {
-	font-family: "RobotoCnRegular", "Times New Roman";
 	font-size: 14px;
 	display: block;
 	text-align: center;
@@ -75,11 +50,10 @@ html, body {
 	margin: 1px;
 	padding: 0px;
 	float: left;
-	color: #FFF;
+	color: #333;
 }
 
 .date .cols3 {
-	font-family: "RobotoCnRegular", "Times New Roman";
 	font-size: 14px;
 	display: block;
 	text-align: center;
@@ -87,5 +61,5 @@ html, body {
 	margin: 1px;
 	padding: 0px;
 	float: left;
-	color: #FFF;
+	color: #333;
 }
