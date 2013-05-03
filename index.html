@@ -4,22 +4,14 @@
 	<meta charset="UTF-8" />
 	<title>CountDown by Andros Romo</title>
 
-	<link type="text/css" rel="stylesheet" media="screen" href="font/styles.css" />
 	<link type="text/css" rel="stylesheet" media="screen" href="style.css" />
 
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-
-	
-
-	<script type="text/javascript" src="countdown.jquery.js"></script>
+	<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="countdown.min.js"></script>
 	<script type="text/javascript">
 
 		$(document).ready(function() {
-		  	
-		  	/*
-			 * countdown(Days,Hours,Minutes,Seconds);
-		  	 */
-			
+
 		  	var apocalypse = getValuesByTimestamp('1368381600');
 
 		  	countdown(apocalypse[0],apocalypse[1],apocalypse[2],apocalypse[3]);
@@ -30,26 +22,23 @@
 
 </head>
 <body>
-
+	
+	<!-- COUNTDOWN -->
 	<div id="timeNext" class="date">
-
-		<!-- COUNTDOWN HERE -->
-
+		
 		<div class="clear"></div>
 		
-		<p class="cols3">Días</p>
+		<p class="cols2">Días</p>
 		<div class="separator"></div>
 
 		<p class="cols2">Horas</p>
 		<div class="separator"></div>
 
 		<p class="cols2">Minutos</p>
-		<div class="separator"></div>
 
-		<p class="cols2">Segundos</p>
-	</div>
-
-	<div id="debug"></div>
+	</div>	
+	<!-- // COUNTDOWN -->
+	
 
 </body>
 </html>
