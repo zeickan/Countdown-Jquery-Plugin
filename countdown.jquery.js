@@ -26,7 +26,7 @@ function countdown(days,hours,minutes,seconds){
     field[0] = '<div id="nextDays"></div>';
     field[1] = '<div id="nextHours"></div>';
     field[2] = '<div id="nextMinutes"></div>';
-    field[3] = '<div id="nextSeconds"></div>';
+    //field[3] = '<div id="nextSeconds"></div>';
     
     /*
      * Separador del contador, normalmente ":"
@@ -45,7 +45,7 @@ function countdown(days,hours,minutes,seconds){
     global_Mins = minutes;
     global_Secs = seconds;
     
-    var Days = disjoin( zeroFill( String(days) , 3 ) );    
+    var Days = disjoin( zeroFill( String(days) , 2 ) );    
     $("#nextDays").html( Days.join('') );
 
     var Hours = disjoin( zeroFill( String(hours) , 2 ) );    
@@ -54,8 +54,8 @@ function countdown(days,hours,minutes,seconds){
     var Minutes = disjoin( zeroFill( String(minutes) , 2 ) );    
     $("#nextMinutes").html( Minutes.join('') );
     
-    var Seconds = disjoin( zeroFill( String(seconds) , 2 ) );    
-    $("#nextSeconds").html( Seconds.join('') );
+    //var Seconds = disjoin( zeroFill( String(seconds) , 2 ) );    
+    //$("#nextSeconds").html( Seconds.join('') );
     
     
     if( global_Days < 1 && global_Hour < 1 && global_Mins < 1 && global_Secs < 1){
@@ -165,8 +165,9 @@ function countSeconds(){
         
         global_Secs = e;
         
-        var Seconds = disjoin( zeroFill( String(e) , 2 ) );    
-        $("#nextSeconds").html( Seconds.join('') );
+        //var Seconds = disjoin( zeroFill( String(e) , 2 ) );    
+        //$("#nextSeconds").html( Seconds.join('') );
+        //console.log( e );
         
         endCountDown();
 
@@ -227,7 +228,7 @@ function minusDays(){
     
     global_Days = e;
     
-    var Days = disjoin( zeroFill( String(e) , 3 ) );    
+    var Days = disjoin( zeroFill( String(e) , 2 ) );    
     $("#nextDays").html( Days.join('') );
     
 }
