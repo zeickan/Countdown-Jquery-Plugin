@@ -4,16 +4,41 @@ var global_Mins = '';
 var global_Secs = '';
 var global_die  = false;
 
-function countdown(days,hours,minutes,seconds){
+/* Funcion inicial */
 
+function countdown(days,hours,minutes,seconds){
+    
+    /*
+     * Revisamos si hay valores negativos
+     */
+    
+    if ( days < 0 ){ days = 0; }     
+    if ( hours < 0 ){ hours = 0; }    
+    if ( minutes < 0 ){ minutes = 0; }    
+    if ( seconds < 0 ){ seconds = 0; }
+    
+    /*
+     * Empezamos el contador
+     */
+    
     field = new Array();
 
     field[0] = '<div id="nextDays"></div>';
     field[1] = '<div id="nextHours"></div>';
     field[2] = '<div id="nextMinutes"></div>';
     field[3] = '<div id="nextSeconds"></div>';
-
+    
+    /*
+     * Separador del contador, normalmente ":"
+     * Para darle un aspecto de reloj
+     */
     $("#timeNext").prepend( field.join('<div class="separator">:</div>') );
+    
+    
+    /*
+     * No mover esto a menos que sepas que lo que haces o
+     * bien que uses GIT y regreses a una versi—n funcional
+     */
     
     global_Days = days;
     global_Hour = hours;
@@ -33,9 +58,19 @@ function countdown(days,hours,minutes,seconds){
     $("#nextSeconds").html( Seconds.join('') );
     
     
-    sTseconds = setInterval('countSeconds()',1000);
+    if( global_Days < 1 && global_Hour < 1 && global_Mins < 1 && global_Secs < 1){
+        console.log("No empieza.");
+    } else {
+        console.log("Comenzamos");
+        sTseconds = setInterval('countSeconds()',1000);   
+    }
     
 }
+
+/*
+ * Funcion para convertir una estampa de tiempo a el
+ * tiempo faltante en d’as, horas, minutos, segundos
+ */
 
 function getValuesByTimestamp( timestampa ){
 
@@ -43,19 +78,25 @@ function getValuesByTimestamp( timestampa ){
      * Apocalipsis:  1356096640
      * Tiempo ahora: 1346704132713
      */
-
+    
+    // Estampa de tiempo
     foo = timestampa;       
-
+    
+    // Estampa de este momento exacto en el tiempo
     fecha = new Date().getTime();
-
+    
+    // Adios nanosegundos de hijos de...
     bar = foo - parseInt(fecha / 1000);
 
+    // Obtenemos los dias de diferencia
     dias = parseInt(bar/86400);
     bar = bar - (dias*86400);
-
+    
+    // Obtenemos las horas de diferencia
     horas = parseInt(bar/3600);
     bar = bar - (horas*3600);
 
+    // Obtenemos los minutos de diferencia
     minutes = parseInt(bar/60);
     bar = bar - (minutes*60);
 
@@ -66,6 +107,10 @@ function getValuesByTimestamp( timestampa ){
     return values;
 
 }
+
+/*
+ * Funcion para asignar a cada caracter un span
+ */
 
 function disjoin(str){
     
@@ -85,22 +130,28 @@ function disjoin(str){
     
 }
 
-//clearInterval(sTseconds);
+/*
+ * Funcion para terminar el conteo cuando estŽ llegue a cero.
+ */
 
 function endCountDown(){
 
     if( global_Days < 1 && global_Hour < 1 && global_Mins < 1 && global_Secs < 1){
-
         global_die = true;
-
-        clearInterval(sTseconds);
-
+        clearInterval(sTseconds);        
+        console.log("Se detuvo");
     }
 
 }
 
-function countSeconds(){
+/*
+ * Funcion de conteo de segundos
+ */
 
+function countSeconds(){
+    
+    /* Si endCountDown() dijo se que termino, se termino */
+    
     if( !global_die == true ){
     
         var i = global_Secs;
@@ -121,7 +172,7 @@ function countSeconds(){
 
     } else {
 
-        alert("Sigo jodiendo...");
+        //alert("Sigo jodiendo...");
 
     }
 
@@ -180,8 +231,6 @@ function minusDays(){
     $("#nextDays").html( Days.join('') );
     
 }
-
-
 
 function zeroFill( number, width ){
   width -= number.toString().length;  if ( width > 0 ){   return new Array( width + (/\./.test( number ) ? 2 : 1) ).join( '0' ) + number;   } return number + ""; 
