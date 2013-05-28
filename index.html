@@ -4,17 +4,20 @@
 	<meta charset="UTF-8" />
 	<title>CountDown by Andros Romo</title>
 
-	<link type="text/css" rel="stylesheet" media="screen" href="style.css" />
+	<link type="text/css" rel="stylesheet" media="screen" href="css/style.css" />
 
-	<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
-	<script type="text/javascript" src="countdown.min.js"></script>
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/countdown.dev.js"></script>
 	<script type="text/javascript">
 
 		$(document).ready(function() {
 
-		  	var apocalypse = getValuesByTimestamp('1368381600');
+		  	//var apocalypse = getValuesByTimestamp('1453999999');
 
-		  	countdown(apocalypse[0],apocalypse[1],apocalypse[2],apocalypse[3]);
+		  	//countdown(apocalypse[0],apocalypse[1],apocalypse[2],apocalypse[3]);
+			
+			
+			$("#timeNext").Apocalypse({ timestamp: "1453999999" });
 
 		});
 
@@ -28,17 +31,22 @@
 		
 		<div class="clear"></div>
 		
-		<p class="cols2">Días</p>
+		<p class="cols3">Días</p>
 		<div class="separator"></div>
 
 		<p class="cols2">Horas</p>
 		<div class="separator"></div>
 
 		<p class="cols2">Minutos</p>
+		<div class="separator"></div>
+		
+		<p class="cols2">Segundos</p>
 
 	</div>	
 	<!-- // COUNTDOWN -->
 	
-
+	<a href="https://github.com/you"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png" alt="Fork me on GitHub"></a>
+	
+	
 </body>
 </html>

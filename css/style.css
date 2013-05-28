@@ -1,4 +1,12 @@
 html, body {
+	background: #000 url(../images/apocalypse.jpg) no-repeat center center fixed;
+	
+	-moz-background-size: cover;
+	-webkit-background-size: cover;
+	-o-background-size: cover;
+	-ms-background-size: cover;
+	background-size: cover;
+	
 	margin: 0px;
 	font-family: "Helvetica";
 	font-weight: 100;
@@ -9,12 +17,23 @@ html, body {
 }
 
 .date {
+	
+	background: rgba(50,50,50,0.6);
+	border-radius: 10px;
+	
+	position: absolute;
+	top: 50%; 
+	left: 50%;
+	margin-top: -65px; /* Restamos la mitad de la altura del objeto con un margin-top */
+	margin-left: -192px; /* Restamos la mitad de la anchura del objeto con un margin-left */
+	padding: 30px;
+	
 	height: 70px; 
 	width: 324px;
 }
 
 .date span {	
-	background: url(images/date.png) no-repeat left top;
+	background: url(../images/date.png) no-repeat left top;
 	display: block;
 	font-size: 34px;
 	text-align: center;
@@ -50,7 +69,7 @@ html, body {
 	margin: 1px;
 	padding: 0px;
 	float: left;
-	color: #333;
+	color: #FFF;
 }
 
 .date .cols3 {
@@ -61,5 +80,5 @@ html, body {
 	margin: 1px;
 	padding: 0px;
 	float: left;
-	color: #333;
+	color: #FFF;
 }
